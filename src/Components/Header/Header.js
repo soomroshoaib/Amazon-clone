@@ -8,7 +8,7 @@ function Header() {
     return (
         <div className="header">
 
-        <img src="http://pngimg.com/uploads/amazon/amazon_PNG6.png" 
+        <img src="https://pngimg.com/uploads/amazon/amazon_PNG25.png" 
             alt="header-logo" 
             className="header__logo"/>
 

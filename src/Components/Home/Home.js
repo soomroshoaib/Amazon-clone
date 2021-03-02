@@ -15,12 +15,14 @@ function Home() {
                     price={29.9}
                     image="https://m.media-amazon.com/images/I/81-QB7nDh4L._AC_UY218_.jpg"
                     rating={3}
+                    id="12313"
                   />
                   <Product 
                   title="National Geographic Kids Why?: Over 1,111 Answers to Everything Hardcover – Illustrated, October 13, 2015"
                   price={30}
                   image="https://images-na.ssl-images-amazon.com/images/I/51T2K01me+L._SX381_BO1,204,203,200_.jpg"
                   rating={4}
+                  id="14133"
                   />
                   
           
@@ -36,25 +38,34 @@ function Home() {
                     price={23.1}
                     image="https://images-na.ssl-images-amazon.com/images/I/51r9ZiBU6rL._SX327_BO1,204,203,200_.jpg"
                     rating={5}
+                    id="21312"
                     />
                   <Product 
                   title="Brown Bear, Brown Bear, What Do You See? Board book – September 15, 1996"
                   image="https://images-na.ssl-images-amazon.com/images/I/51430n+9jlL._SY344_BO1,204,203,200_.jpg"
                   price={19.2}
                   rating={3}
+                  id="42123"
                   />
                   <Product 
                   title="Dr. Seuss's Beginner Book Collection (Cat in the Hat, One Fish Two Fish, Green Eggs and Ham, Hop on Pop, Fox in Socks) Hardcover – Box set, September 22, 2009"
                   image="https://images-na.ssl-images-amazon.com/images/I/51PWDGLykIL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg"
                   price={18.1}
                   rating={5}
+                  id="12342"
                   />
                   
               </div>
               
               <div className="home__row">
                     {/* Product */}
-                    <Product />
+                    <Product 
+                    title="Dr. Seuss's Beginner Book Collection (Cat in the Hat, One Fish Two Fish, Green Eggs and Ham, Hop on Pop, Fox in Socks) Hardcover – Box set, September 22, 2009"
+                  image="https://images-na.ssl-images-amazon.com/images/I/51PWDGLykIL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg"
+                  price={18.1}
+                  rating={5}
+                  id="45123"
+                  />
                  
               </div>
                 

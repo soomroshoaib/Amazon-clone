@@ -1,14 +1,51 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './login.css';
-import { Link } from 'react-router-dom';
+import { Link,useHistory } from 'react-router-dom';
+import { auth } from './../../firebase';
+
 
 function Login() {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const history = useHistory();
+
+    const signIn = (e)=> {
+    e.preventDefault();
+    //firebase sign method
+    auth
+     .signInWithEmailAndPassword(email, password)
+     .then(auth =>{
+         history.push('/');
+     })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      alert(errorMessage);
+      
+    });
+    }
+
+    const register = (e) => {
+        e.preventDefault();
+        //firebase
+        auth
+    .createUserWithEmailAndPassword(email, password)
+    .then((auth) => {
+        if (auth) {
+            history.push('/')
+        }
+    console.log(auth);
+    })
+    .catch(error => alert(error))
+    }
+    
+
     return (
         <div className="login">
             <Link to="/"> 
            <img 
            className="login__logo"
-           src="" 
+           src="http://pngimg.com/uploads/amazon/amazon_PNG6.png" 
            alt="Amazon-logo" />
             </Link>
 
@@ -17,10 +54,12 @@ function Login() {
 
                   <form>
                     <h5>E-mail</h5>
-                    <input type="text"/>
+                    <input type="text" value={email} onChange={(e)=> setEmail(e.target.value)}/>
                   <h5>Password</h5>
-                    <input type="password"/>
+                    <input type="password" value={password} onChange={(e)=> setPassword(e.target.value)}/>
                     <button 
+                    type="submit"
+                    onClick={signIn}
                     className="login__signInButton"
                     >Sign In
                     </button>
@@ -32,6 +71,7 @@ function Login() {
                   </p>
 
                   <button 
+                  onClick={register}
                   className="login__registerButton"
                   >Create Your Amazon Account</button>
                   </form>

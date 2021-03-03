@@ -6,13 +6,14 @@ import { useStateValue } from '../../StateProvider';
 import CheckoutProduct from '../CheckoutProduct/CheckoutProduct';
 
 function Checkout() {
-    const [{ basket }, dispatch]= useStateValue();
+    const [{ basket,user }, dispatch]= useStateValue();
     return (
         <div className="checkout">
             <div className="checkout__left">
                 <img className="checkout__ad" src="https://images-eu.ssl-images-amazon.com/images/G/31/prime/PEX/PeX-Top-PC-1500X375.jpg" alt="add"/>
             
             <div>
+                <h3>Hello, {user?.email}</h3>
                 <h2 className="checkout__title">
                 Shopping Basket
                 </h2>

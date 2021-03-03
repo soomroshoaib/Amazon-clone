@@ -3,10 +3,12 @@ import './subtotal.css';
 
 import CurrencyFormat from 'react-currency-format';
 import { SportsBasketball } from '@material-ui/icons';
-
+import { useStateValue } from './../../StateProvider';
+import { getBasketTotal } from '../../reducer';
 
 function Subtotal() {
-    
+    const [{ basket }, dispatch] = useStateValue();
+
     return (
         <div className="subtotal">
             <CurrencyFormat 
@@ -14,9 +16,9 @@ function Subtotal() {
                 <>
                 <p>
                     {/* Part of the homework */}
-                    Subtotal (0 items): 
+                    Subtotal ({basket.length} items): 
                     {/* <strong>{`${value}`}</strong> */}
-                    <strong>0</strong>
+                    <strong>{value}</strong>
 
                     <small className="subtotal__gift">
                         <input type="checkbox" />
@@ -26,7 +28,7 @@ function Subtotal() {
                 </>
             )}
             decimalScale={2}
-            value={0}  // part of the homework
+            value={getBasketTotal(basket)}  // part of the homework
             displayType={"text"} 
             thousandSeparator={true} 
             prefix={'$'} 

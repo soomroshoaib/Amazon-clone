@@ -3,9 +3,28 @@ import { useStateValue } from "../../StateProvider";
 import CheckoutProduct from './../CheckoutProduct/CheckoutProduct';
 import { Link } from 'react-router-dom';
 import "./payment.css";
+import {loadStripe} from '@stripe/stripe-js';
+import {
+  CardElement,
+  Elements,
+  useStripe,
+  useElements,
+} from '@stripe/react-stripe-js';
 
 function Payment() {
     const [{ basket, user }, dispatch] = useStateValue();
+    const stripe = useStripe();
+    const elements = useElements();
+    console.log(stripe,elements);
+
+    const handleSubmit = (e)=> {
+        // do all the fancy stripe stuff...
+
+    }
+    
+    const handleChange = (e)=> {
+
+    }
 
   return (
     <div className="payment">
@@ -45,6 +64,9 @@ function Payment() {
                 <h3>Payment Method</h3>
                 <div className="payment__details">
                     {/* Stripe Api using */}
+                    <form onSubmit={handleSubmit}>
+                        <CardElement onChange={handleChange} />
+                    </form>
                 </div>
             </div>
 

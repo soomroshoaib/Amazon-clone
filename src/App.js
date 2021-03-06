@@ -7,6 +7,7 @@ import Checkout from "./Components/Checkout/Checkout";
 import Login from "./Authentication/Login/Login";
 import { auth } from './firebase';
 import { useStateValue } from "./StateProvider";
+import Payment from "./Components/Payment/Payment";
 // 1-05-40
 
 //1. Upgrade the header component to include the user's email
@@ -49,6 +50,10 @@ function App() {
           <Route path="/checkout">
             <Header />
             <Checkout />
+          </Route>
+          <Route path="/payment">
+            <Header />
+            <Payment />
           </Route>
 
           <Route path="/">

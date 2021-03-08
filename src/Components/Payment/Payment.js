@@ -16,30 +16,32 @@ import {
 } from '@stripe/react-stripe-js';
 
 function Payment() {
+    
     const [{ basket, user }, dispatch] = useStateValue();
     const [succeeded, setSucceeded] = useState(false);
     const [processing, setProcessing] = useState("");
     const [error, setError] = useState(null);
     const [disabled, setDisabled] =useState(true);
     const [clientSecret, setClientSecret] =useState(true);
+    
     const history = useHistory();
     
 
     useEffect(()=> {
     // generate the special stripe secret which allows us to charge 
-    // a cutomer
+    // a customer
     const getClientSecret = async () => {
          const response = await axios({
              method: 'post',
              // Stripe expects the total in a currrencies subunits
              url: `/payments/create?total=${getBasketTotal(basket)*100}`
          })
-         setClientSecret(response.data.clientSecret)
+         setClientSecret(response.data.clientSecret);
      }
      getClientSecret();
     }, [basket]);
 
-    
+
     console.log('Client Secret is >>>>',clientSecret);
 
     const stripe = useStripe();

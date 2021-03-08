@@ -16,7 +16,7 @@ import { Elements } from '@stripe/react-stripe-js';
 //2. Add animation to the build
 //3. Style Amazon
 
-const stripePromise = loadStripe("pk_test_51IPbKHLGi8vxXfkLOAPosAJ7j4HUk6dmKfIqlgMAr3AvetVs30fUOpnpd8tO2ET9FVtjlMYWPmmvAViQ8HYrnftP00GeZgjBqQ");
+const stripePromise = loadStripe("pk_live_51IPbKHLGi8vxXfkLk6F1nVnAVArBxG9ZJSahGsbZST2sdgH9ejTOiYN2zVYJgV0oEkU86PbKaXIklTHyY3p58OkY00dIM4K2ft");
 console.log(stripePromise);
 function App() {
    const [{}, dispatch] = useStateValue();
@@ -46,7 +46,6 @@ function App() {
     <Router>
       <div className="App">
         {/* <Header /> */}
-
         <Switch>
           <Route path="/orders">
             <Orders />

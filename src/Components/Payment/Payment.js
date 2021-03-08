@@ -8,6 +8,7 @@ import CurrencyFormat from 'react-currency-format';
 import { getBasketTotal } from '../../reducer';
 import axios from '../../Api/axios';
 import { useHistory } from 'react-router-dom';
+import { db } from './../../firebase';
 import {
   CardElement,
   Elements,
@@ -60,6 +61,17 @@ function Payment() {
             }
         }).then(({ paymentIntent })=>{
         // paymentIntent = payment confirmation
+
+        db
+        .collection('users')
+        .doc(user?.id)
+        .collection('orders')
+        .doc(paymentIntent.id)
+        .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+        })
 
         setSucceeded(true);
         setError(null);

@@ -199,3 +199,22 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Finished \"api\" in ~1s"}}
 [debug] [2021-03-08T17:04:34.234Z] [worker-api-58dc7816-cd4f-4e4f-84f8-64460e9b1880]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-58dc7816-cd4f-4e4f-84f8-64460e9b1880]: IDLE"}}
 [debug] [2021-03-08T17:04:34.235Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2021-03-08T18:37:32.661Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2021-03-08T18:37:32.661Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2021-03-08T18:37:32.661Z] Accepted request POST /clone-2fd2a/us-central1/api/payments/create?total=5990 --> api
+[debug] [2021-03-08T18:37:32.662Z] [worker-pool] submitWork(triggerId=api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=api)"}}
+[debug] [2021-03-08T18:37:32.662Z] [worker-api-58dc7816-cd4f-4e4f-84f8-64460e9b1880]: Assigning socketPath: /tmp/fire_emu_41554.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-58dc7816-cd4f-4e4f-84f8-64460e9b1880]: Assigning socketPath: /tmp/fire_emu_41554.sock"}}
+[debug] [2021-03-08T18:37:32.662Z] [worker-api-58dc7816-cd4f-4e4f-84f8-64460e9b1880]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-58dc7816-cd4f-4e4f-84f8-64460e9b1880]: BUSY"}}
+[debug] [2021-03-08T18:37:32.665Z] [runtime-status] [41554] Trigger "api" has been found, beginning invocation! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [41554] Trigger \"api\" has been found, beginning invocation!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Beginning execution of \"api\""}}
+[debug] [2021-03-08T18:37:32.668Z] [runtime-status] [41554] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [41554] triggerDefinition {\"httpsTrigger\":{},\"name\":\"api\",\"entryPoint\":\"api\"}"}}
+[debug] [2021-03-08T18:37:32.668Z] [runtime-status] [41554] Running api in mode HTTPS {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [41554] Running api in mode HTTPS"}}
+[debug] [2021-03-08T18:37:32.668Z] [runtime-status] [41554] Attempting to listen to socketPath: /tmp/fire_emu_41554.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [41554] Attempting to listen to socketPath: /tmp/fire_emu_41554.sock"}}
+[debug] [2021-03-08T18:37:32.670Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2021-03-08T18:37:32.670Z] [functions] Got req.url=/clone-2fd2a/us-central1/api/payments/create?total=5990, mapping to path=/payments/create?total=5990 {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/clone-2fd2a/us-central1/api/payments/create?total=5990, mapping to path=/payments/create?total=5990"}}
+[debug] [2021-03-08T18:37:32.691Z] [runtime-status] [41554] Ephemeral server handling POST request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [41554] Ephemeral server handling POST request"}}
+[info] >  Payment Request Recieved BOOM!!! for this amount >>> 5990 {"user":"Payment Request Recieved BOOM!!! for this amount >>> 5990","metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"\u001b[90m> \u001b[39m Payment Request Recieved BOOM!!! for this amount >>> 5990"}}
+[debug] [2021-03-08T18:37:32.706Z] [runtime-status] [41554] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [41554] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Finished \"api\" in ~1s"}}
+[debug] [2021-03-08T18:37:33.514Z] [worker-api-58dc7816-cd4f-4e4f-84f8-64460e9b1880]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-58dc7816-cd4f-4e4f-84f8-64460e9b1880]: IDLE"}}
+[debug] [2021-03-08T18:37:33.514Z] [work-queue] {"queueLength":0,"workRunningCount":0}

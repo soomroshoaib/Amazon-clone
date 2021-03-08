@@ -5,13 +5,13 @@ import Home from "./Components/Home/Home";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Checkout from "./Components/Checkout/Checkout";
 import Login from "./Authentication/Login/Login";
+import Orders from './Components/Orders/Orders';
 import { auth } from './firebase';
 import { useStateValue } from "./StateProvider";
 import Payment from "./Components/Payment/Payment";
 import {loadStripe} from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
-// 1-05-40
-
+// 1-05-40 
 //1. Upgrade the header component to include the user's email
 //2. Add animation to the build
 //3. Style Amazon
@@ -48,6 +48,9 @@ function App() {
         {/* <Header /> */}
 
         <Switch>
+          <Route path="/orders">
+            <Orders />
+          </Route>
           <Route path="/login">
             <Login />
           </Route>

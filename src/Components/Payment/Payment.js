@@ -6,7 +6,7 @@ import "./payment.css";
 import {loadStripe} from '@stripe/stripe-js';
 import CurrencyFormat from 'react-currency-format';
 import { getBasketTotal } from '../../reducer';
-import axios from 'axios';
+import axios from '../../Api/axios';
 import { useHistory } from 'react-router-dom';
 import {
   CardElement,
@@ -18,37 +18,40 @@ import {
 function Payment() {
     const [{ basket, user }, dispatch] = useStateValue();
     const [succeeded, setSucceeded] = useState(false);
-    const [processing, setProcessing] = useState(null);
+    const [processing, setProcessing] = useState("");
     const [error, setError] = useState(null);
     const [disabled, setDisabled] =useState(true);
     const [clientSecret, setClientSecret] =useState(true);
     const history = useHistory();
+    
+
     useEffect(()=> {
     // generate the special stripe secret which allows us to charge 
-     // a cutomer
-
+    // a cutomer
     const getClientSecret = async () => {
          const response = await axios({
              method: 'post',
              // Stripe expects the total in a currrencies subunits
              url: `/payments/create?total=${getBasketTotal(basket)*100}`
          })
-
          setClientSecret(response.data.clientSecret)
      }
-
      getClientSecret();
-    }, [basket])
+    }, [basket]);
+
+    
+    console.log('Client Secret is >>>>',clientSecret);
 
     const stripe = useStripe();
     const elements = useElements();
     console.log(stripe,elements);
 
+
     const handleSubmit = async(event)=> {
         // do all the fancy stripe stuff...
         event.preventDefault();
         setProcessing(true);
-
+        
         const payload = await stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: elements.getElement(CardElement)
@@ -60,16 +63,21 @@ function Payment() {
         setError(null);
         setProcessing(false);
 
+        dispatch({
+            type: 'EMPTY_BASKET'
+        })
+
         history.replace('/orders')
         })
 
     }
     
+    
     const handleChange = (event)=> {
            // Listen for changes in the CardElement
            // and display any errors as the cutomer types and the card details
            setDisabled(event.empty);
-           setError(event.error ? event.error.message : "" )
+           setError(event.error ? event.error.message : "" );
     }
 
   return (

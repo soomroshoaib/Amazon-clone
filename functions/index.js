@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 // const stripe = require("stripe")("pk_test_51IPbKHLGi8vxXfkLOAPosAJ7j4HUk6dmKfIqlgMAr3AvetVs30fUOpnpd8tO2ET9FVtjlMYWPmmvAViQ8HYrnftP00GeZgjBqQ");
 // const stripe = require("stripe")("pk_test_51IPbKHLGi8vxXfkLOAPosAJ7j4HUk6dmKfIqlgMAr3AvetVs30fUOpnpd8tO2ET9FVtjlMYWPmmvAViQ8HYrnftP00GeZgjBqQ");
+// const stripe = require("stripe")("pk_live_51IPbKHLGi8vxXfkLk6F1nVnAVArBxG9ZJSahGsbZST2sdgH9ejTOiYN2zVYJgV0oEkU86PbKaXIklTHyY3p58OkY00dIM4K2ft");
 const stripe = require("stripe")("sk_test_51IPbKHLGi8vxXfkLMxTuTODqqG7IuXpx7DmV5PEZHKTBDK10NtX6D23fI2OTGAbZA2cQ64VtWIej2SYSPyWz6aGi00kxaUgxbM");
 // const stripe = require("stripe")("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");
 

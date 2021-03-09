@@ -1,8 +1,9 @@
 import firebase from "firebase";
 
 const firebaseApp = firebase.initializeApp({
-    apiKey: "AIzaSyA_f-YJqzN1eSWNgAGjYDoaycpT62c4qPM",
+  apiKey: "AIzaSyA_f-YJqzN1eSWNgAGjYDoaycpT62c4qPM",
   authDomain: "clone-2fd2a.firebaseapp.com",
+  databaseURL: "https://clone-2fd2a-default-rtdb.firebaseio.com",
   projectId: "clone-2fd2a",
   storageBucket: "clone-2fd2a.appspot.com",
   messagingSenderId: "344859468720",

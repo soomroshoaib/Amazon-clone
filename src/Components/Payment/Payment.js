@@ -66,7 +66,7 @@ function Payment() {
         .collection('users')
         .doc(user?.id)
         .collection('orders')
-        .doc(paymentIntent.id)
+        .doc(paymentIntent.uid)
         .set({
             basket: basket,
             amount: paymentIntent.amount,
